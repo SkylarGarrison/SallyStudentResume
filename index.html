@@ -1,0 +1,103 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Here you can find Sally contact information">
+    <title>Sally contact</title>
+</head>
+<body>
+
+<header>
+    <div id="img">
+    </div>
+    <h1 class="title">About me</h1>
+</header>
+
+<main>
+
+</main>
+
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+
+const contain = document.querySelector('main');
+
+function NewApp(props) {
+    return (
+        <div>
+            <Intro name={props.name} />
+        </div>
+    )
+}
+
+function Intro (props) {
+    return (
+        <div>
+            
+            <section id="introduction">
+                <img src="/images/sally.jpg"/>
+                <p>Hi I'm {props.name} and I'm 25. Below this line you'll find more information about me.</p>
+            </section>
+        </div>
+    )
+};
+
+function Education() {
+    return (
+        <section id="Education">
+            <p>I have studied at:</p>
+                <ul>
+                    <li>IES BEZMILIANA</li>
+                    <li>Minnesota University</li>
+                </ul>
+        </section>
+    )
+};
+
+function Jobs() {
+    return (
+    <section id="works">
+        <p>I have worked at:</p>
+        <div id="works_list">
+            <ul>
+                <li>Github as Engineer during 2018 and there I have to
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </li>
+                <li>Jetbrains as Project manager during 2019 and I'm still working there. My work consist in
+                    A assumenda autem dolorem doloremque
+                </li>
+            </ul>
+        </div>
+    </section>
+    )
+};
+
+function Contact(props) {
+    return (
+    <section id="Contact-section">
+        <p>My contact information: </p>
+        <address id="Contact-info">
+            <p>My email is: <a href="mailto://{props.name}@IntenetExplorer.old">{props.name}@IntenetExplorer.old</a></p>
+            <p>My phone number is: <a href="tel:+34100572415">+34 100 57 24 15</a></p>
+        </address>
+    </section>
+    )
+};
+
+
+    ReactDOM.render(
+    <div>
+        <NewApp name='Sky' />
+        <Education />
+        <Jobs />
+        <Contact />
+    </div>
+    ,
+    contain
+    );
+</script>
+
+</body>
